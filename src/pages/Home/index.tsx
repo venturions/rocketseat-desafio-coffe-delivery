@@ -2,18 +2,19 @@ import { CoffeeCard } from "./components/CoffeeCard";
 import {
   CoffeeListContainer,
   Content,
-  ContentContainer,
   ContentInformation,
   CustomCoffeeIcon,
   CustomPackageIcon,
   CustomShoppingCartIcon,
   CustomTimerIcon,
+  IntroSectionContainer,
+  SectionContainer,
 } from "./styles";
 
 export function Home() {
   return (
     <>
-      <ContentContainer>
+      <IntroSectionContainer>
         <Content>
           <h1>Encontre o café perfeito para qualquer hora do dia</h1>
           <p>
@@ -57,9 +58,8 @@ export function Home() {
           </ContentInformation>
         </Content>
         <img src="src/assets/images/background.svg"></img>
-      </ContentContainer>
-
-      <ContentContainer>
+      </IntroSectionContainer>
+      <SectionContainer>
         <CoffeeListContainer>
           <h1>Nossos cafés</h1>
           <div>
@@ -72,7 +72,7 @@ export function Home() {
             <CoffeeCard></CoffeeCard>
           </div>
         </CoffeeListContainer>
-      </ContentContainer>
+      </SectionContainer>
     </>
   );
 }
