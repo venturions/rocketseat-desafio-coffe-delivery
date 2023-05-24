@@ -1,7 +1,7 @@
 import { ShoppingCart, Timer, Coffee, Package } from "phosphor-react";
 import styled from "styled-components";
 
-export const ContentContainer = styled.div`
+export const ContentContainer = styled.section`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -10,7 +10,7 @@ export const ContentContainer = styled.div`
   @media screen and (max-width: 1040px) {
     justify-content: center;
 
-    img {
+    > img {
       display: none;
     }
   }
@@ -91,4 +91,43 @@ export const CustomPackageIcon = styled(Package)`
 
 export const CustomCoffeeIcon = styled(Coffee)`
   background: ${(props) => props.theme["purple"]};
+`;
+
+export const CoffeeListContainer = styled.section`
+  margin-top: 140px;
+
+  @media screen and (max-width: 1040px) {
+    max-width: 588px;
+  }
+
+  > h1 {
+    font-weight: 800;
+    font-size: 2rem;
+    line-height: 130%;
+
+    color: ${(props) => props.theme["base-subtitle"]};
+
+    @media screen and (max-width: 600px) {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  > div {
+    margin-top: 32px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 2rem;
+
+    @media screen and (max-width: 1040px) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media screen and (max-width: 680px) {
+      grid-template-columns: 1fr 1fr;
+    }
+    @media screen and (max-width: 600px) {
+      grid-template-columns: 1fr;
+    }
+  }
 `;
