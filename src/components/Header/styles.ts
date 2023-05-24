@@ -18,6 +18,7 @@ export const HeaderContainer = styled.header`
       align-items: center;
       color: ${(props) => props.theme["yellow-dark"]};
       background: ${(props) => props.theme["yellow-light"]};
+      border-radius: 6px;
     }
   }
 `;
@@ -28,6 +29,9 @@ export const LocationContainer = styled.div`
   justify-content: center;
   align-items: center;
   gap: 4px;
+
+  background: ${(props) => props.theme["purple-light"]};
+  border-radius: 6px;
 
   svg {
     color: ${(props) => props.theme["purple"]};
