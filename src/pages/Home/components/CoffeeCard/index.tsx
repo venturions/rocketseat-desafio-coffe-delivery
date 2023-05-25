@@ -14,7 +14,7 @@ import { ShoppingCartSimple } from "phosphor-react";
 export function CoffeeCard() {
   return (
     <CoffeeCardContainer>
-      <img src="src/assets/images/coffes/expresso.svg" alt="coffee" />
+      <img src="src/assets/images/coffes/expresso.svg" alt="Foto de um café" />
       <TagsContainer>
         <Tag>Tradicional</Tag>
         <Tag>Comaaaaeite</Tag>

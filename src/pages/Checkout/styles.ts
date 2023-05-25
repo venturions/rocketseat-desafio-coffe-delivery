@@ -5,6 +5,7 @@ export const CheckoutContainer = styled.div`
   margin-top: 72px;
   display: flex;
   justify-content: space-between;
+  gap: 24px;
 
   @media screen and (max-width: 1040px) {
     display: inline-block;

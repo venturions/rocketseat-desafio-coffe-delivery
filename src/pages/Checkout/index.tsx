@@ -20,6 +20,7 @@ import {
   PaymentMethodContent,
 } from "./styles";
 import { useEffect, useState } from "react";
+import { ConfirmOrderCard } from "./components/ConfirmOrderCard";
 
 export function Checkout() {
   const [selectedPaymentMethod, setSelectedPaymentMethod] = useState("");
@@ -117,9 +118,7 @@ export function Checkout() {
           </Container>
         </PaymentMethodContainer>
       </AddressAndPaymentMethodContainer>
-      <aside style={{ width: "448px" }}>
-        <h1>Cafés selecionados</h1>
-      </aside>
+      <ConfirmOrderCard />
     </CheckoutContainer>
   );
 }

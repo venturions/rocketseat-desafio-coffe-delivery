@@ -9,7 +9,7 @@ export const CounterContainer = styled.div`
   gap: 4px;
 
   width: 72px;
-  height: 38px;
+  height: 32px;
 
   background: ${(props) => props.theme["base-button"]};
   border-radius: 6px;
