@@ -43,7 +43,7 @@ export function ConfirmOrderCard() {
             </OrderTotal>
             <button
               onClick={() => {
-                navigate("/orderResume");
+                navigate("/summary");
               }}
             >
               <ButtonGText>Confirmar Pedido</ButtonGText>

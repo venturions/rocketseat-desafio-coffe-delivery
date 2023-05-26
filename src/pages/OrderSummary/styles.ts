@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const CheckoutFilledContainer = styled.div`
+export const OrderSummaryContainer = styled.div`
   margin-top: 80px;
   width: auto;
 
@@ -38,7 +38,7 @@ export const CheckoutFilledContainer = styled.div`
     }
   }
 `;
-export const OrderSummary = styled.main`
+export const Summary = styled.main`
   margin-top: 40px;
   box-sizing: border-box;
   background: ${(props) => props.theme["background"]};

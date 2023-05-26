@@ -1,17 +1,17 @@
 import { CurrencyDollar, MapPin, Timer } from "phosphor-react";
-import { CheckoutFilledContainer, OrderSummary } from "./styles";
+import { OrderSummaryContainer, Summary } from "./styles";
 import { TextWithIcon } from "../../components/TextWithIcon";
 import { TextL, TextM, TitleL } from "../../components/Typography";
 
-export function CheckoutFilled() {
+export function OrderSummary() {
   return (
-    <CheckoutFilledContainer>
+    <OrderSummaryContainer>
       <TitleL color="yellow-dark">Uhu! Pedido confirmado</TitleL>
       <TextL color="base-subtitle">
         Agora é só aguardar que logo o café chegará até você
       </TextL>
       <div>
-        <OrderSummary>
+        <Summary>
           <TextWithIcon
             icon={<MapPin weight="fill" size={22} />}
             text={
@@ -44,14 +44,14 @@ export function CheckoutFilled() {
             }
             iconBackgroundColor="yellow-dark"
           />
-        </OrderSummary>
+        </Summary>
         <div>
           <img
-            src="src/assets/images/orderResumeImage.svg"
+            src="src/assets/images/summaryImage.svg"
             alt="Imagem de um entregador levando a sua encomenda"
           ></img>
         </div>
       </div>
-    </CheckoutFilledContainer>
+    </OrderSummaryContainer>
   );
 }
