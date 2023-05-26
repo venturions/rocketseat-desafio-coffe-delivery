@@ -14,13 +14,23 @@ export const CounterContainer = styled.div`
   background: ${(props) => props.theme["base-button"]};
   border-radius: 6px;
 
-  > svg {
-    color: ${(props) => props.theme.purple};
-  }
-
   p {
     width: 20px;
     height: 21px;
     text-align: center;
+  }
+
+  button {
+    margin: 0;
+    padding: 0;
+    background: transparent;
+
+    :hover {
+      background: transparent;
+    }
+
+    > svg {
+      color: ${(props) => props.theme.purple};
+    }
   }
 `;
