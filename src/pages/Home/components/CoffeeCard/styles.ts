@@ -106,7 +106,6 @@ export const ActionsContainer = styled.div`
 
     :hover {
       background: ${(props) => props.theme["purple"]};
-      cursor: pointer;
     }
     :focus {
       box-shadow: none;

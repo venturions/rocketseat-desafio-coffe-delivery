@@ -3,17 +3,18 @@ import { TextWithIcon } from "../../components/TextWithIcon";
 import { TextL, TextM, TitleL, TitleXL } from "../../components/Typography";
 import { CoffeeCard } from "./components/CoffeeCard";
 import {
-  CoffeeListContainer,
+  CoffeeList,
+  CoffeeListGrid,
+  CoffeeListSection,
   Content,
   ContentInformation,
-  IntroSectionContainer,
-  SectionContainer,
+  IntroSection,
 } from "./styles";
 
 export function Home() {
   return (
     <>
-      <IntroSectionContainer>
+      <IntroSection>
         <Content>
           <TitleXL color="base-title">
             Encontre o café perfeito para qualquer hora do dia
@@ -53,11 +54,11 @@ export function Home() {
           </ContentInformation>
         </Content>
         <img src="src/assets/images/background.svg"></img>
-      </IntroSectionContainer>
-      <SectionContainer>
-        <CoffeeListContainer>
+      </IntroSection>
+      <CoffeeListSection>
+        <CoffeeList>
           <TitleL color="base-title">Nossos cafés</TitleL>
-          <div>
+          <CoffeeListGrid>
             <CoffeeCard></CoffeeCard>
             <CoffeeCard></CoffeeCard>
             <CoffeeCard></CoffeeCard>
@@ -65,9 +66,9 @@ export function Home() {
             <CoffeeCard></CoffeeCard>
             <CoffeeCard></CoffeeCard>
             <CoffeeCard></CoffeeCard>
-          </div>
-        </CoffeeListContainer>
-      </SectionContainer>
+          </CoffeeListGrid>
+        </CoffeeList>
+      </CoffeeListSection>
     </>
   );
 }

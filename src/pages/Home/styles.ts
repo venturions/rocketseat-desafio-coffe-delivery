@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const SectionContainer = styled.section`
+export const CoffeeListSection = styled.section`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -9,7 +9,7 @@ export const SectionContainer = styled.section`
     justify-content: center;
   }
 `;
-export const IntroSectionContainer = styled(SectionContainer)`
+export const IntroSection = styled(CoffeeListSection)`
   margin-top: 5.875rem;
 
   @media screen and (max-width: 1040px) {
@@ -57,7 +57,7 @@ export const ContentInformation = styled.div`
   }
 `;
 
-export const CoffeeListContainer = styled.section`
+export const CoffeeList = styled.div`
   margin-top: 140px;
 
   @media screen and (max-width: 1040px) {
@@ -70,22 +70,22 @@ export const CoffeeListContainer = styled.section`
       justify-content: center;
     }
   }
+`;
 
-  > div {
-    margin-top: 32px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 2rem;
+export const CoffeeListGrid = styled.div`
+  margin-top: 32px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 2rem;
 
-    @media screen and (max-width: 1240px) {
-      grid-template-columns: 1fr 1fr 1fr;
-    }
+  @media screen and (max-width: 1240px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 
-    @media screen and (max-width: 1040px) {
-      grid-template-columns: 1fr 1fr;
-    }
-    @media screen and (max-width: 650px) {
-      grid-template-columns: 1fr;
-    }
+  @media screen and (max-width: 1040px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media screen and (max-width: 650px) {
+    grid-template-columns: 1fr;
   }
 `;

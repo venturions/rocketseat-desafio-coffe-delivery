@@ -1,15 +1,23 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { HeaderContainer, LocationContainer } from "./styles";
 import { ShoppingCart, MapPin } from "phosphor-react";
 import { TextS } from "../Typography";
 
 export function Header() {
+  const navigate = useNavigate();
+
   return (
     <HeaderContainer>
-      <img
-        src="src/assets/images/coffeDeliveryLogo.svg"
-        alt="Um copo de café com um foguete desenhado e ao lado está escrito Coffe Delivery"
-      ></img>
+      <button
+        onClick={() => {
+          navigate("/");
+        }}
+      >
+        <img
+          src="src/assets/images/coffeDeliveryLogo.svg"
+          alt="Um copo de café com um foguete desenhado e ao lado está escrito Coffe Delivery"
+        ></img>
+      </button>
       <nav>
         <LocationContainer>
           <MapPin weight="fill" alt="" size={22} />

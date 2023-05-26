@@ -1,32 +1,18 @@
-import {
-  MapPinLine,
-  CurrencyDollar,
-  CreditCard,
-  Money,
-  Bank,
-} from "phosphor-react";
-import { Row, Col, Container } from "react-grid-system";
+import { Row, Col } from "react-grid-system";
 
 import {
   AddressAndPaymentMethodContainer,
   AddressContainer,
-  AddressContent,
+  AddressForm,
   CheckoutContainer,
-  ContentSubtitleContainer,
-  CustomButton,
   CustomInput,
-  FormContainer,
-  PaymentMethodContainer,
-  PaymentMethodContent,
 } from "./styles";
 import { useEffect, useState } from "react";
 import { ConfirmOrderCard } from "./components/ConfirmOrderCard";
-import {
-  ButtonMText,
-  TextM,
-  TextS,
-  TitleXS,
-} from "../../components/Typography";
+import { TitleXS } from "../../components/Typography";
+import { PaymentMethod } from "./components/PaymentMethod";
+import { OrderSectionTitle } from "./components/OrderSectionTitle/OrderSectionTitle";
+import { MapPinLine } from "phosphor-react";
 
 export function Checkout() {
   const [selectedPaymentMethod, setSelectedPaymentMethod] = useState("");
@@ -44,16 +30,13 @@ export function Checkout() {
       <AddressAndPaymentMethodContainer>
         <TitleXS color="base-subtitle">Complete seu pedido</TitleXS>
         <AddressContainer>
-          <AddressContent>
-            <MapPinLine alt="" size={22} />
-            <ContentSubtitleContainer>
-              <TextM color="base-subtitle">Endereço de entrega</TextM>
-              <TextS color="base-text">
-                Informe o endereço onde deseja receber seu pedido
-              </TextS>
-            </ContentSubtitleContainer>
-          </AddressContent>
-          <FormContainer>
+          <OrderSectionTitle
+            icon={<MapPinLine alt="" size={22} />}
+            iconColor="yellow-dark"
+            title="Endereço de Entrega"
+            subtitle="Informe o endereço onde deseja receber seu pedido"
+          />
+          <AddressForm>
             <Row>
               <Col xs={12} lg={4}>
                 <CustomInput placeholder="CEP" />
@@ -83,48 +66,9 @@ export function Checkout() {
                 <CustomInput placeholder="UF" />
               </Col>
             </Row>
-          </FormContainer>
+          </AddressForm>
         </AddressContainer>
-        <PaymentMethodContainer>
-          <PaymentMethodContent>
-            <CurrencyDollar alt="Símbolo da sigra de um dólar" size={22} />
-            <ContentSubtitleContainer>
-              <TextM color="base-subtitle">Pagamento</TextM>
-              <TextS color="base-text">
-                O pagamento é feito na entrega. Escolha a forma que deseja pagar
-              </TextS>
-            </ContentSubtitleContainer>
-          </PaymentMethodContent>
-          <Container>
-            <Row>
-              <Col sm={12} md={4}>
-                <CustomButton
-                  onClick={() => handleSelectPaymentMethod("Cartão de crédito")}
-                >
-                  <CreditCard alt="Símbolo da sigra de um dólar" size={14} />
-                  <ButtonMText color="base-text">Cartão de crédito</ButtonMText>
-                </CustomButton>
-              </Col>
-
-              <Col sm={12} md={4}>
-                <CustomButton
-                  onClick={() => handleSelectPaymentMethod("Cartão de débito")}
-                >
-                  <Bank alt="Símbolo da sigra de um dólar" size={14} />
-                  <ButtonMText color="base-text">Cartão de débito</ButtonMText>
-                </CustomButton>
-              </Col>
-              <Col sm={12} md={4}>
-                <CustomButton
-                  onClick={() => handleSelectPaymentMethod("Dinheiro")}
-                >
-                  <Money alt="Símbolo da sigra de um dólar" size={14} />
-                  <ButtonMText color="base-text">Dinheiro</ButtonMText>
-                </CustomButton>
-              </Col>
-            </Row>
-          </Container>
-        </PaymentMethodContainer>
+        <PaymentMethod handleSelectPaymentMethod={handleSelectPaymentMethod} />
       </AddressAndPaymentMethodContainer>
       <ConfirmOrderCard />
     </CheckoutContainer>

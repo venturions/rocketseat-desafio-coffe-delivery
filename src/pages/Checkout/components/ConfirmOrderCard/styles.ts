@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ConfirmOrderSection = styled.aside`
+export const ConfirmOrderContainer = styled.aside`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -13,7 +13,7 @@ export const ConfirmOrderSection = styled.aside`
   border-radius: 6px 44px;
 `;
 
-export const ConfirmOrderContainer = styled.div`
+export const ConfirmOrderSection = styled.section`
   @media screen and (max-width: 1040px) {
     margin-top: 3rem;
   }
@@ -62,6 +62,10 @@ export const ResumeContainer = styled.div`
     border-radius: 6px;
 
     text-transform: uppercase;
+
+    :hover {
+      background: ${(props) => props.theme["yellow-dark"]};
+    }
 
     @media screen and (max-width: 1040px) {
       display: flex;

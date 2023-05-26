@@ -19,7 +19,15 @@ export const HeaderContainer = styled.header`
       color: ${(props) => props.theme["yellow-dark"]};
       background: ${(props) => props.theme["yellow-light"]};
       border-radius: 6px;
+
+      :active {
+        box-shadow: 0 0 0 2px ${(props) => props.theme.yellow};
+      }
     }
+  }
+
+  button {
+    background: ${(props) => props.theme.background};
   }
 `;
 

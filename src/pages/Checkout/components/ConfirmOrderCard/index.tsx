@@ -19,9 +19,9 @@ export function ConfirmOrderCard() {
 
   return (
     <>
-      <ConfirmOrderContainer>
+      <ConfirmOrderSection>
         <TitleXS color="base-subtitle">Cafés selecionados</TitleXS>
-        <ConfirmOrderSection>
+        <ConfirmOrderContainer>
           <CheckoutCoffeeCard />
           <CheckoutCoffeeCard />
           <ResumeContainer>
@@ -49,8 +49,8 @@ export function ConfirmOrderCard() {
               <ButtonGText>Confirmar Pedido</ButtonGText>
             </button>
           </ResumeContainer>
-        </ConfirmOrderSection>
-      </ConfirmOrderContainer>
+        </ConfirmOrderContainer>
+      </ConfirmOrderSection>
     </>
   );
 }

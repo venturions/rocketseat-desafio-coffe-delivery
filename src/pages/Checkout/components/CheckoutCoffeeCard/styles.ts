@@ -83,6 +83,10 @@ export const CounterAndButtonContainer = styled.div`
 
     color: ${(props) => props.theme["base-text"]};
 
+    :hover {
+      background: ${(props) => props.theme["base-hover"]};
+    }
+
     svg {
       color: ${(props) => props.theme["purple"]};
     }
