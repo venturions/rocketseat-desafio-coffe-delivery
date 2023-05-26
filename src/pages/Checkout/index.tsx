@@ -21,6 +21,12 @@ import {
 } from "./styles";
 import { useEffect, useState } from "react";
 import { ConfirmOrderCard } from "./components/ConfirmOrderCard";
+import {
+  ButtonMText,
+  TextM,
+  TextS,
+  TitleXS,
+} from "../../components/Typography";
 
 export function Checkout() {
   const [selectedPaymentMethod, setSelectedPaymentMethod] = useState("");
@@ -36,13 +42,15 @@ export function Checkout() {
   return (
     <CheckoutContainer>
       <AddressAndPaymentMethodContainer>
-        <h1>Complete seu pedido</h1>
+        <TitleXS color="base-subtitle">Complete seu pedido</TitleXS>
         <AddressContainer>
           <AddressContent>
             <MapPinLine alt="" size={22} />
             <ContentSubtitleContainer>
-              <span>Endereço de entrega</span>
-              <label>Informe o endereço onde deseja receber seu pedido</label>
+              <TextM color="base-subtitle">Endereço de entrega</TextM>
+              <TextS color="base-text">
+                Informe o endereço onde deseja receber seu pedido
+              </TextS>
             </ContentSubtitleContainer>
           </AddressContent>
           <FormContainer>
@@ -81,10 +89,10 @@ export function Checkout() {
           <PaymentMethodContent>
             <CurrencyDollar alt="Símbolo da sigra de um dólar" size={22} />
             <ContentSubtitleContainer>
-              <span>Pagamento</span>
-              <label>
+              <TextM color="base-subtitle">Pagamento</TextM>
+              <TextS color="base-text">
                 O pagamento é feito na entrega. Escolha a forma que deseja pagar
-              </label>
+              </TextS>
             </ContentSubtitleContainer>
           </PaymentMethodContent>
           <Container>
@@ -94,7 +102,7 @@ export function Checkout() {
                   onClick={() => handleSelectPaymentMethod("Cartão de crédito")}
                 >
                   <CreditCard alt="Símbolo da sigra de um dólar" size={14} />
-                  Cartão de crédito
+                  <ButtonMText color="base-text">Cartão de crédito</ButtonMText>
                 </CustomButton>
               </Col>
 
@@ -103,7 +111,7 @@ export function Checkout() {
                   onClick={() => handleSelectPaymentMethod("Cartão de débito")}
                 >
                   <Bank alt="Símbolo da sigra de um dólar" size={14} />
-                  Cartão de débito
+                  <ButtonMText color="base-text">Cartão de débito</ButtonMText>
                 </CustomButton>
               </Col>
               <Col sm={12} md={4}>
@@ -111,7 +119,7 @@ export function Checkout() {
                   onClick={() => handleSelectPaymentMethod("Dinheiro")}
                 >
                   <Money alt="Símbolo da sigra de um dólar" size={14} />
-                  Dinheiro
+                  <ButtonMText color="base-text">Dinheiro</ButtonMText>
                 </CustomButton>
               </Col>
             </Row>

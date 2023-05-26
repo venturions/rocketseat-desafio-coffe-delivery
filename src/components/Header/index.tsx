@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { HeaderContainer, LocationContainer } from "./styles";
 import { ShoppingCart, MapPin } from "phosphor-react";
+import { TextS } from "../Typography";
 
 export function Header() {
   return (
@@ -12,7 +13,7 @@ export function Header() {
       <nav>
         <LocationContainer>
           <MapPin weight="fill" alt="" size={22} />
-          <label>Porto Alegre, RS</label>
+          <TextS color="purple-dark">Porto Alegre, RS</TextS>
         </LocationContainer>
         <NavLink to="/checkout">
           <ShoppingCart

@@ -10,25 +10,41 @@ import {
 } from "./styles";
 import { Counter } from "../../../../components/Counter";
 import { ShoppingCartSimple } from "phosphor-react";
+import {
+  TagText,
+  TextS,
+  TitleM,
+  TitleS,
+} from "../../../../components/Typography";
 
 export function CoffeeCard() {
   return (
     <CoffeeCardContainer>
       <img src="src/assets/images/coffes/expresso.svg" alt="Foto de um café" />
       <TagsContainer>
-        <Tag>Tradicional</Tag>
-        <Tag>Comaaaaeite</Tag>
-        <Tag>Tradicional</Tag>
+        <Tag>
+          <TagText color="yellow-dark">Tradicional</TagText>
+        </Tag>
+        <Tag>
+          <TagText color="yellow-dark">Com leite</TagText>
+        </Tag>
+        <Tag>
+          <TagText color="yellow-dark">Tradicional</TagText>
+        </Tag>
       </TagsContainer>
-      <Name>Expresso Tradicional</Name>
+      <Name>
+        <TitleS color="base-subtitle">Expresso Tradicional</TitleS>
+      </Name>
       <Description>
-        O tradicional café feito com água quente e grãos moídos
+        <TextS color="base-label">
+          O tradicional café feito com água quente e grãos moídos
+        </TextS>
       </Description>
 
       <PriceAndCounterContainer>
         <Price>
-          <span>R$</span>
-          <label>10,00</label>
+          <TextS color="base-text">R$</TextS>
+          <TitleM color="base-text">10,00</TitleM>
         </Price>
         <ActionsContainer>
           <Counter></Counter>

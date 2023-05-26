@@ -1,33 +1,53 @@
+import { useNavigate } from "react-router-dom";
 import { CheckoutCoffeeCard } from "../CheckoutCoffeeCard";
+
 import {
   ConfirmOrderContainer,
   ConfirmOrderSection,
   OrderTotal,
   ResumeContainer,
 } from "./styles";
+import {
+  ButtonGText,
+  TextL,
+  TextS,
+  TitleXS,
+} from "../../../../components/Typography";
 
 export function ConfirmOrderCard() {
+  const navigate = useNavigate();
+
   return (
     <>
       <ConfirmOrderContainer>
-        <h1>Cafés selecionados</h1>
+        <TitleXS color="base-subtitle">Cafés selecionados</TitleXS>
         <ConfirmOrderSection>
           <CheckoutCoffeeCard />
           <CheckoutCoffeeCard />
           <ResumeContainer>
             <div>
-              <span>Total de itens</span>
-              <span>R$ 29,70</span>
+              <TextS color="base-text">Total de itens</TextS>
+              <TextS color="base-text">R$ 29,70</TextS>
             </div>
             <div>
-              <span>Entrega</span>
-              <span>R$ 3,50</span>
+              <TextS color="base-text">Entrega</TextS>
+              <TextS color="base-text">R$ 3,50</TextS>
             </div>
             <OrderTotal>
-              <h1>Total</h1>
-              <h1>R$ 33,20</h1>
+              <TextL bold color="base-subtitle">
+                Total
+              </TextL>
+              <TextL bold color="base-subtitle">
+                R$ 33,20
+              </TextL>
             </OrderTotal>
-            <button>Confirmar Pedido</button>
+            <button
+              onClick={() => {
+                navigate("/orderResume");
+              }}
+            >
+              <ButtonGText>Confirmar Pedido</ButtonGText>
+            </button>
           </ResumeContainer>
         </ConfirmOrderSection>
       </ConfirmOrderContainer>

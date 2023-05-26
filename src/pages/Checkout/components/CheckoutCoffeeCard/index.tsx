@@ -1,4 +1,4 @@
-import { Minus, Trash } from "phosphor-react";
+import { Trash } from "phosphor-react";
 import { Counter } from "../../../../components/Counter";
 import { Divider } from "../ConfirmOrderCard/styles";
 import {

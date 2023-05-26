@@ -15,14 +15,8 @@ export const CheckoutContainer = styled.div`
 
 export const AddressAndPaymentMethodContainer = styled.div`
   h1 {
-    font-weight: 700;
-    font-size: 1.125rem;
-    line-height: 130%;
-
     display: flex;
     align-items: center;
-
-    color: ${(props) => props.theme["base-subtitle"]};
   }
 `;
 
@@ -73,26 +67,7 @@ export const ContentSubtitleContainer = styled.div`
 
   height: 44px;
 
-  font-family: "Roboto";
   gap: 2px;
-
-  span {
-    font-size: 1rem;
-
-    display: flex;
-    align-items: center;
-
-    color: ${(props) => props.theme["base-subtitle"]};
-  }
-
-  label {
-    font-size: 0.875rem;
-
-    display: flex;
-    align-items: center;
-
-    color: ${(props) => props.theme["base-text"]};
-  }
 `;
 
 export const FormContainer = styled(Container)`
@@ -136,15 +111,7 @@ export const CustomButton = styled.button`
   background: ${(props) => props.theme["base-button"]};
   border-radius: 6px;
 
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 160%;
-
   text-transform: uppercase;
-
-  color: ${(props) => props.theme["base-text"]};
 
   border: 1px solid transparent;
   box-shadow: none;

@@ -14,17 +14,6 @@ export const ConfirmOrderSection = styled.aside`
 `;
 
 export const ConfirmOrderContainer = styled.div`
-  h1 {
-    font-weight: 700;
-    font-size: 1.125rem;
-    line-height: 130%;
-
-    display: flex;
-    align-items: center;
-
-    color: ${(props) => props.theme["base-subtitle"]};
-  }
-
   @media screen and (max-width: 1040px) {
     margin-top: 3rem;
   }
@@ -54,18 +43,6 @@ export const ResumeContainer = styled.div`
     gap: 8px;
 
     width: 100%;
-
-    span {
-      font-family: "Roboto";
-      font-size: 1rem;
-      line-height: 130%;
-
-      display: flex;
-      align-items: center;
-      text-align: right;
-
-      color: ${(props) => props.theme["base-text"]};
-    }
   }
 
   button {
@@ -84,15 +61,7 @@ export const ResumeContainer = styled.div`
     background: ${(props) => props.theme["yellow"]};
     border-radius: 6px;
 
-    font-family: "Roboto";
-    font-weight: 700;
-    font-size: 0.875rem;
-    line-height: 160%;
-
     text-transform: uppercase;
-
-    color: ${(props) => props.theme["white"]};
-    font-stretch: 100;
 
     @media screen and (max-width: 1040px) {
       display: flex;
@@ -115,17 +84,4 @@ export const OrderTotal = styled.div`
   align-items: center;
   padding: 0px;
   gap: 8px;
-
-  span {
-    font-family: "Roboto";
-    font-weight: 700;
-    font-size: 1.25rem;
-    line-height: 130%;
-
-    display: flex;
-    align-items: center;
-    text-align: right;
-
-    color: ${(props) => props.theme["base-subtitle"]};
-  }
 `;

@@ -37,12 +37,7 @@ export const LocationContainer = styled.div`
     color: ${(props) => props.theme["purple"]};
   }
 
-  label {
-    font-family: "Roboto";
-    font-size: 0.875rem;
-    line-height: 130%;
-
-    color: ${(props) => props.theme["purple-dark"]};
+  p {
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
 `;

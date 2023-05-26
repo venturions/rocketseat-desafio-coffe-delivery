@@ -22,15 +22,9 @@ export const CounterContainer = styled.div`
     }
   }
 
-  span {
+  p {
     width: 20px;
     height: 21px;
-
-    font-family: "Roboto";
-    font-size: 1rem;
-    line-height: 130%;
     text-align: center;
-
-    color: ${(props) => props.theme["base-title"]};
   }
 `;

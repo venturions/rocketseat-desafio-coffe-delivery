@@ -25,27 +25,13 @@ export const CoffeeCardContainer = styled.main`
   }
 `;
 
-export const Name = styled.h1`
+export const Name = styled.div`
   margin-top: 1rem;
-  font-weight: 700;
-  font-size: 1.25rem;
-  line-height: 130%;
-
-  display: flex;
-  align-items: flex-end;
-  text-align: center;
-
-  color: ${(props) => props.theme["base-subtitle"]};
 `;
 
-export const Description = styled.label`
+export const Description = styled.div`
   margin-top: 0.5rem;
-  font-family: "Roboto";
-  font-size: 0.875rem;
-  line-height: 130%;
   text-align: center;
-
-  color: ${(props) => props.theme["base-label"]};
 `;
 
 export const TagsContainer = styled.div`
@@ -72,11 +58,6 @@ export const Tag = styled.span`
   background: ${(props) => props.theme["yellow-light"]};
   border-radius: 100px;
 
-  font-family: "Roboto";
-  font-weight: 700;
-  font-size: 0.625rem;
-  line-height: 130%;
-
   text-transform: uppercase;
 
   color: ${(props) => props.theme["yellow-dark"]};
@@ -93,19 +74,9 @@ export const PriceAndCounterContainer = styled.div`
 `;
 
 export const Price = styled.div`
-  color: ${(props) => props.theme["base-text"]};
+  display: flex;
+  align-items: center;
   gap: 4px;
-
-  span {
-    font-family: "Roboto";
-    font-size: 0.875rem;
-    line-height: 18px;
-  }
-  label {
-    font-size: 1.5rem;
-    font-weight: 800;
-    line-height: 31px;
-  }
 `;
 
 export const ActionsContainer = styled.div`

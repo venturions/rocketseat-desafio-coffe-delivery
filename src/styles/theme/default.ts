@@ -1,12 +1,12 @@
 export const defaultTheme = {
-  "white": "#FFFFFF",
+  white: "#FFFFFF",
 
   "yellow-light": "#F1E9C9",
-  "yellow": "#DBAC2C",
+  yellow: "#DBAC2C",
   "yellow-dark": "#C47F17",
 
   "purple-light": "#EBE5F9",
-  "purple": "#8047F8",
+  purple: "#8047F8",
   "purple-dark": "#4B2995",
 
   "base-title": "#272221",
@@ -17,5 +17,23 @@ export const defaultTheme = {
   "base-button": "#E6E5E5",
   "base-input": "#EDEDED",
   "base-card": "#F3F2F2",
-  "background": "#FAFAFA",
+  background: "#FAFAFA",
 };
+
+export type ColorTypes =
+  | "white"
+  | "yellow-light"
+  | "yellow"
+  | "yellow-dark"
+  | "purple-light"
+  | "purple"
+  | "purple-dark"
+  | "base-title"
+  | "base-subtitle"
+  | "base-text"
+  | "base-label"
+  | "base-hover"
+  | "base-button"
+  | "base-input"
+  | "base-card"
+  | "background";
