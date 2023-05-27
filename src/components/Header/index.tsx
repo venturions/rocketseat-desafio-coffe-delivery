@@ -1,10 +1,18 @@
-import { NavLink, useNavigate } from "react-router-dom";
-import { HeaderContainer, LocationContainer } from "./styles";
+import { useNavigate } from "react-router-dom";
+import { CartButton, HeaderContainer, LocationContainer } from "./styles";
 import { ShoppingCart, MapPin } from "phosphor-react";
 import { TextS } from "../Typography";
+import { OrderContext } from "../../contexts/OrderContext";
+import { useContext, useEffect } from "react";
 
 export function Header() {
+  const { cartItems } = useContext(OrderContext);
+
   const navigate = useNavigate();
+
+  useEffect(() => {
+    console.log(cartItems);
+  }, [cartItems]);
 
   return (
     <HeaderContainer>
@@ -23,13 +31,13 @@ export function Header() {
           <MapPin weight="fill" alt="" size={22} />
           <TextS color="purple-dark">Porto Alegre, RS</TextS>
         </LocationContainer>
-        <NavLink to="/checkout">
+        <CartButton numberOfItems={cartItems?.length} to="/checkout">
           <ShoppingCart
             weight="fill"
             alt="Icone de um carrinho de compras"
             size={22}
           />
-        </NavLink>
+        </CartButton>
       </nav>
     </HeaderContainer>
   );

@@ -63,6 +63,7 @@ export function Home() {
             {CoffeeList.map((item: CoffeeCardProps) => {
               return (
                 <CoffeeCard
+                  key={item.name}
                   name={item.name}
                   description={item.description}
                   tags={item.tags}

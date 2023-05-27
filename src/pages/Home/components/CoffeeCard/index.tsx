@@ -20,6 +20,8 @@ import {
 import { CoffeeCardProps } from "../../../../models/coffeeCard";
 import { numberToBRL } from "../../../../utils/numberToBRL";
 import { convertToCamelCase } from "../../../../utils/toCamelCase";
+import { useContext, useState } from "react";
+import { OrderContext } from "../../../../contexts/OrderContext";
 
 export function CoffeeCard({
   name,
@@ -27,6 +29,34 @@ export function CoffeeCard({
   tags,
   price,
 }: CoffeeCardProps) {
+  const { setItemInCart } = useContext(OrderContext);
+
+  const [coffeeQuantity, setCoffeeQuantity] = useState(1);
+
+  function handleAddCoffeeQuantity() {
+    setCoffeeQuantity((state) => {
+      return state + 1;
+    });
+  }
+
+  function handleSubCoffeeQuantity() {
+    if (coffeeQuantity > 1) {
+      setCoffeeQuantity((state) => {
+        return state - 1;
+      });
+    }
+  }
+
+  function handleAddCoffeeToCart() {
+    const selectedCoffee = {
+      coffeeName: name,
+      quantity: coffeeQuantity,
+      coffeePrice: price,
+    };
+
+    setItemInCart(selectedCoffee);
+  }
+
   return (
     <CoffeeCardContainer>
       <img
@@ -55,8 +85,12 @@ export function CoffeeCard({
           <TitleM color="base-text">{numberToBRL(price)}</TitleM>
         </Price>
         <ActionsContainer>
-          <Counter></Counter>
-          <ShoppingCartButton>
+          <Counter
+            coffeeQuantity={coffeeQuantity}
+            handleAddCoffeeQuantity={handleAddCoffeeQuantity}
+            handleSubCoffeeQuantity={handleSubCoffeeQuantity}
+          ></Counter>
+          <ShoppingCartButton onClick={handleAddCoffeeToCart}>
             <ShoppingCartSimple weight="fill" size={22} />
           </ShoppingCartButton>
         </ActionsContainer>

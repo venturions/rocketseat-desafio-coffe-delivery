@@ -1,25 +1,18 @@
 import { Minus, Plus } from "phosphor-react";
 import { CounterContainer } from "./styles";
 import { TextM } from "../Typography";
-import { useState } from "react";
 
-export function Counter() {
-  const [coffeeQuantity, setCoffeeQuantity] = useState(1);
+interface CounterProps {
+  coffeeQuantity: number;
+  handleAddCoffeeQuantity: () => void;
+  handleSubCoffeeQuantity: () => void;
+}
 
-  function handleAddCoffeeQuantity() {
-    setCoffeeQuantity((state) => {
-      return state + 1;
-    });
-  }
-
-  function handleSubCoffeeQuantity() {
-    if (coffeeQuantity > 1) {
-      setCoffeeQuantity((state) => {
-        return state - 1;
-      });
-    }
-  }
-
+export function Counter({
+  coffeeQuantity,
+  handleAddCoffeeQuantity,
+  handleSubCoffeeQuantity,
+}: CounterProps) {
   return (
     <CounterContainer>
       <button onClick={handleSubCoffeeQuantity}>

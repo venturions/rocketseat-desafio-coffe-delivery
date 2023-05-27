@@ -1,4 +1,9 @@
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+
+interface CartButtonProps {
+  numberOfItems: number;
+}
 
 export const HeaderContainer = styled.header`
   display: flex;
@@ -10,20 +15,6 @@ export const HeaderContainer = styled.header`
     justify-content: center;
     align-items: center;
     gap: 12px;
-
-    a {
-      padding: 0.5rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: ${(props) => props.theme["yellow-dark"]};
-      background: ${(props) => props.theme["yellow-light"]};
-      border-radius: 6px;
-
-      :active {
-        box-shadow: 0 0 0 2px ${(props) => props.theme.yellow};
-      }
-    }
   }
 
   button {
@@ -47,5 +38,46 @@ export const LocationContainer = styled.div`
 
   p {
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+`;
+
+export const CartButton = styled(NavLink)<CartButtonProps>`
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: ${(props) => props.theme["yellow-dark"]};
+  background: ${(props) => props.theme["yellow-light"]};
+  border-radius: 6px;
+
+  :active {
+    box-shadow: 0 0 0 2px ${(props) => props.theme.yellow};
+  }
+  position: relative;
+
+  &::after {
+    display: ${(props) => (props.numberOfItems > 0 ? "flex" : "none")};
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+
+    content: ${(props) => `"${props.numberOfItems}"`};
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: -8.35px;
+    top: -8px;
+
+    background: ${(props) => props.theme["yellow-dark"]};
+    border-radius: 50%;
+
+    font-family: "Roboto";
+    font-weight: 700;
+    font-size: 0.75rem;
+    text-align: center;
+    letter-spacing: -0.06em;
+
+    color: ${(props) => props.theme.white};
   }
 `;
