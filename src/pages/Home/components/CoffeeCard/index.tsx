@@ -5,6 +5,7 @@ import {
   Name,
   Price,
   PriceAndCounterContainer,
+  ShoppingCartButton,
   Tag,
   TagsContainer,
 } from "./styles";
@@ -48,9 +49,9 @@ export function CoffeeCard() {
         </Price>
         <ActionsContainer>
           <Counter></Counter>
-          <button>
+          <ShoppingCartButton>
             <ShoppingCartSimple weight="fill" size={22} />
-          </button>
+          </ShoppingCartButton>
         </ActionsContainer>
       </PriceAndCounterContainer>
     </CoffeeCardContainer>

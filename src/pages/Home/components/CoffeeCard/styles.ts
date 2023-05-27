@@ -64,6 +64,7 @@ export const Tag = styled.span`
 `;
 
 export const PriceAndCounterContainer = styled.div`
+  width: 100%;
   margin-top: 33px;
   display: flex;
   flex-direction: row;
@@ -74,6 +75,7 @@ export const PriceAndCounterContainer = styled.div`
 `;
 
 export const Price = styled.div`
+  padding: 1rem;
   display: flex;
   align-items: center;
   gap: 4px;
@@ -84,31 +86,31 @@ export const ActionsContainer = styled.div`
   align-items: center;
 
   gap: 16px;
+`;
 
-  button {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 8px;
-    gap: 8px;
-    border: 0;
+export const ShoppingCartButton = styled.button`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  gap: 8px;
+  border: 0;
 
-    width: 38px;
-    height: 38px;
+  width: 38px;
+  height: 38px;
 
-    background: ${(props) => props.theme["purple-dark"]};
-    border-radius: 6px;
+  background: ${(props) => props.theme["purple-dark"]};
+  border-radius: 6px;
 
-    svg {
-      color: ${(props) => props.theme["white"]};
-    }
+  svg {
+    color: ${(props) => props.theme["white"]};
+  }
 
-    :hover {
-      background: ${(props) => props.theme["purple"]};
-    }
-    :focus {
-      box-shadow: none;
-    }
+  :hover {
+    background: ${(props) => props.theme["purple"]};
+  }
+  :focus {
+    box-shadow: none;
   }
 `;

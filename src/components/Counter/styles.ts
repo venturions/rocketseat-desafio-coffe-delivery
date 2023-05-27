@@ -24,6 +24,7 @@ export const CounterContainer = styled.div`
     margin: 0;
     padding: 0;
     background: transparent;
+    align-self: flex-start;
 
     :hover {
       background: transparent;
