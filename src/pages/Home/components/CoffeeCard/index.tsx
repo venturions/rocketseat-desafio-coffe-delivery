@@ -55,6 +55,7 @@ export function CoffeeCard({
     };
 
     setItemInCart(selectedCoffee);
+    setCoffeeQuantity(1);
   }
 
   return (
@@ -66,7 +67,7 @@ export function CoffeeCard({
       <TagsContainer>
         {tags.map((item) => {
           return (
-            <Tag>
+            <Tag key={item}>
               <TagText color="yellow-dark">{item}</TagText>
             </Tag>
           );

@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 interface CartButtonProps {
-  numberOfItems: number;
+  numberofitems: number;
 }
 
 export const HeaderContainer = styled.header`
@@ -56,13 +56,13 @@ export const CartButton = styled(NavLink)<CartButtonProps>`
   position: relative;
 
   &::after {
-    display: ${(props) => (props.numberOfItems > 0 ? "flex" : "none")};
+    display: ${(props) => (props.numberofitems > 0 ? "flex" : "none")};
     flex-direction: row;
     justify-content: center;
     align-items: center;
     padding: 0px;
 
-    content: ${(props) => `"${props.numberOfItems}"`};
+    content: ${(props) => props.numberofitems && `"${props.numberofitems}"`};
     position: absolute;
     width: 20px;
     height: 20px;

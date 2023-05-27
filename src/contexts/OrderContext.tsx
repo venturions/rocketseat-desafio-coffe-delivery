@@ -23,7 +23,17 @@ export function OrderContextProvider({ children }: CyclesContextProviderProps) {
 
       if (itemIndex !== -1) {
         const updatedOrderItems = [...prevOrderItems];
-        updatedOrderItems[itemIndex] = item;
+        if (item.quantity === 1 && itemIndex === 0) {
+          updatedOrderItems[itemIndex] = {
+            ...updatedOrderItems[itemIndex],
+            quantity: updatedOrderItems[itemIndex].quantity + item.quantity,
+          };
+        } else {
+          updatedOrderItems[itemIndex] = {
+            ...updatedOrderItems[itemIndex],
+            quantity: updatedOrderItems[itemIndex].quantity + item.quantity,
+          };
+        }
         return updatedOrderItems;
       }
 
