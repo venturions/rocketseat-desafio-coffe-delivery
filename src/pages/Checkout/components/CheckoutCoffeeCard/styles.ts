@@ -57,38 +57,38 @@ export const CoffeeDetailsContainer = styled.div`
 export const CounterAndButtonContainer = styled.div`
   display: flex;
   gap: 8px;
+`;
 
-  button {
-    border: 0;
+export const RemoveButton = styled.button`
+  border: 0;
 
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 0px 8px;
-    gap: 4px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 8px;
+  gap: 4px;
 
-    width: 91px;
-    height: 32px;
+  width: 91px;
+  height: 32px;
 
-    background: ${(props) => props.theme["base-button"]};
-    border-radius: 6px;
+  background: ${(props) => props.theme["base-button"]};
+  border-radius: 6px;
 
-    font-family: "Roboto";
-    font-weight: 400;
-    font-size: 0.75rem;
-    line-height: 160%;
+  font-family: "Roboto";
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 160%;
 
-    text-transform: uppercase;
+  text-transform: uppercase;
 
-    color: ${(props) => props.theme["base-text"]};
+  color: ${(props) => props.theme["base-text"]};
 
-    :hover {
-      background: ${(props) => props.theme["base-hover"]};
-    }
+  :hover {
+    background: ${(props) => props.theme["base-hover"]};
+  }
 
-    svg {
-      color: ${(props) => props.theme["purple"]};
-    }
+  svg {
+    color: ${(props) => props.theme["purple"]};
   }
 `;

@@ -5,6 +5,7 @@ import {
   CheckoutCoffeeCardContainer,
   CoffeeDetailsContainer,
   CounterAndButtonContainer,
+  RemoveButton,
   TitleAndPriceContainer,
 } from "./styles";
 
@@ -27,9 +28,9 @@ export function CheckoutCoffeeCard() {
           </TitleAndPriceContainer>
           <CounterAndButtonContainer>
             <Counter />
-            <button>
+            <RemoveButton>
               <Trash weight="bold" size={14} /> Remover
-            </button>
+            </RemoveButton>
           </CounterAndButtonContainer>
         </CoffeeDetailsContainer>
       </CheckoutCoffeeCardContainer>
