@@ -57,7 +57,7 @@ export const ContentInformation = styled.div`
   }
 `;
 
-export const CoffeeList = styled.div`
+export const CoffeeListContainer = styled.div`
   margin-top: 140px;
 
   @media screen and (max-width: 1040px) {

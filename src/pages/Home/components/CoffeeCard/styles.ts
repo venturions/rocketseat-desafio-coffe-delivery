@@ -21,7 +21,7 @@ export const CoffeeCardContainer = styled.main`
 
   img {
     position: relative;
-    top: -30px;
+    top: -20px;
   }
 `;
 
@@ -70,7 +70,7 @@ export const PriceAndCounterContainer = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 0px;
+  padding-bottom: 1.25rem;
   gap: 29px;
 `;
 

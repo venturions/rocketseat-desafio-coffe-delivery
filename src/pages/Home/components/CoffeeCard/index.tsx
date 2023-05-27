@@ -17,35 +17,42 @@ import {
   TitleM,
   TitleS,
 } from "../../../../components/Typography";
+import { CoffeeCardProps } from "../../../../models/coffeeCard";
+import { numberToBRL } from "../../../../utils/numberToBRL";
+import { convertToCamelCase } from "../../../../utils/toCamelCase";
 
-export function CoffeeCard() {
+export function CoffeeCard({
+  name,
+  description,
+  tags,
+  price,
+}: CoffeeCardProps) {
   return (
     <CoffeeCardContainer>
-      <img src="src/assets/images/coffes/expresso.svg" alt="Foto de um café" />
+      <img
+        src={`src/assets/images/coffes/${convertToCamelCase(name)}.svg`}
+        alt="Foto de um café"
+      />
       <TagsContainer>
-        <Tag>
-          <TagText color="yellow-dark">Tradicional</TagText>
-        </Tag>
-        <Tag>
-          <TagText color="yellow-dark">Com leite</TagText>
-        </Tag>
-        <Tag>
-          <TagText color="yellow-dark">Tradicional</TagText>
-        </Tag>
+        {tags.map((item) => {
+          return (
+            <Tag>
+              <TagText color="yellow-dark">{item}</TagText>
+            </Tag>
+          );
+        })}
       </TagsContainer>
       <Name>
-        <TitleS color="base-subtitle">Expresso Tradicional</TitleS>
+        <TitleS color="base-subtitle">{name}</TitleS>
       </Name>
       <Description>
-        <TextS color="base-label">
-          O tradicional café feito com água quente e grãos moídos
-        </TextS>
+        <TextS color="base-label">{description}</TextS>
       </Description>
 
       <PriceAndCounterContainer>
         <Price>
           <TextS color="base-text">R$</TextS>
-          <TitleM color="base-text">10,00</TitleM>
+          <TitleM color="base-text">{numberToBRL(price)}</TitleM>
         </Price>
         <ActionsContainer>
           <Counter></Counter>

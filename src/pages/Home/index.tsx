@@ -3,13 +3,14 @@ import { TextWithIcon } from "../../components/TextWithIcon";
 import { TextL, TextM, TitleL, TitleXL } from "../../components/Typography";
 import { CoffeeCard } from "./components/CoffeeCard";
 import {
-  CoffeeList,
+  CoffeeListContainer,
   CoffeeListGrid,
   CoffeeListSection,
   Content,
   ContentInformation,
   IntroSection,
 } from "./styles";
+import { CoffeeCardProps, CoffeeList } from "../../models/coffeeCard";
 
 export function Home() {
   return (
@@ -56,18 +57,21 @@ export function Home() {
         <img src="src/assets/images/background.svg"></img>
       </IntroSection>
       <CoffeeListSection>
-        <CoffeeList>
+        <CoffeeListContainer>
           <TitleL color="base-title">Nossos cafés</TitleL>
           <CoffeeListGrid>
-            <CoffeeCard></CoffeeCard>
-            <CoffeeCard></CoffeeCard>
-            <CoffeeCard></CoffeeCard>
-            <CoffeeCard></CoffeeCard>
-            <CoffeeCard></CoffeeCard>
-            <CoffeeCard></CoffeeCard>
-            <CoffeeCard></CoffeeCard>
+            {CoffeeList.map((item: CoffeeCardProps) => {
+              return (
+                <CoffeeCard
+                  name={item.name}
+                  description={item.description}
+                  tags={item.tags}
+                  price={item.price}
+                ></CoffeeCard>
+              );
+            })}
           </CoffeeListGrid>
-        </CoffeeList>
+        </CoffeeListContainer>
       </CoffeeListSection>
     </>
   );
