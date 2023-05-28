@@ -32,8 +32,6 @@ export function OrderContextProvider({ children }: CyclesContextProviderProps) {
         "@coffee-delivery:cartItems-state-1.0.0"
       );
 
-      console.log("localStorageValue:", localStorageValue);
-
       if (localStorageValue) {
         const parsedValue = JSON.parse(localStorageValue);
         setCartItems(parsedValue);
