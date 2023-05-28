@@ -7,8 +7,9 @@ import { useContext } from "react";
 
 export function Header() {
   const { cartItems } = useContext(OrderContext);
-
   const navigate = useNavigate();
+
+  const cartIsEmpty = cartItems.length < 1;
 
   return (
     <HeaderContainer>
@@ -27,7 +28,13 @@ export function Header() {
           <MapPin weight="fill" alt="" size={22} />
           <TextS color="purple-dark">Porto Alegre, RS</TextS>
         </LocationContainer>
-        <CartButton numberofitems={cartItems?.length} to="/checkout">
+        <CartButton
+          numberofitems={cartItems?.length}
+          disabled={cartIsEmpty}
+          onClick={() => {
+            navigate("/checkout");
+          }}
+        >
           <ShoppingCart
             weight="fill"
             alt="Icone de um carrinho de compras"

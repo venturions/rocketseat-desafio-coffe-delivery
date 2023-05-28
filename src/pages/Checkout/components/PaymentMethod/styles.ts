@@ -1,4 +1,8 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+
+interface CustomButtonProps {
+  focused: boolean;
+}
 
 export const PaymentMethodContent = styled.div`
   display: flex;
@@ -23,7 +27,7 @@ export const PaymentMethodContainer = styled.div`
   background: ${(props) => props.theme["base-card"]};
 `;
 
-export const CustomButton = styled.button`
+export const CustomButton = styled.button<CustomButtonProps>`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -51,10 +55,12 @@ export const CustomButton = styled.button`
     background: ${(props) => props.theme["base-hover"]};
   }
 
-  :focus {
-    background: ${(props) => props.theme["purple-light"]};
-    border: 1px solid ${(props) => props.theme["purple"]};
-  }
+  ${({ focused }) =>
+    focused &&
+    css`
+      background: ${(props) => props.theme["purple-light"]};
+      border: 1px solid ${(props) => props.theme["purple"]};
+    `}
 
   svg {
     color: ${(props) => props.theme["purple"]};

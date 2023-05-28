@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router-dom";
 import { CheckoutCoffeeCard } from "../CheckoutCoffeeCard";
 
 import {
@@ -13,21 +12,42 @@ import {
   TextS,
   TitleXS,
 } from "../../../../components/Typography";
+import { OrderContext } from "../../../../contexts/OrderContext";
+import { useContext, useEffect, useState } from "react";
+import { numberToBRL } from "../../../../utils/numberToBRL";
 
 export function ConfirmOrderCard() {
-  const navigate = useNavigate();
+  const { cartItems } = useContext(OrderContext);
+
+  const [totalValue, setTotalValue] = useState<number>(0);
+
+  useEffect(() => {
+    let calculatedTotalValue = 0;
+
+    cartItems.forEach((item) => {
+      calculatedTotalValue += item.coffeePrice * item.quantity;
+    });
+
+    setTotalValue(calculatedTotalValue);
+  }, [cartItems]);
 
   return (
     <>
       <ConfirmOrderSection>
         <TitleXS color="base-subtitle">Cafés selecionados</TitleXS>
         <ConfirmOrderContainer>
-          <CheckoutCoffeeCard />
-          <CheckoutCoffeeCard />
+          {cartItems.map((cartItem) => {
+            return (
+              <CheckoutCoffeeCard
+                key={cartItem.coffeeName}
+                coffeeDetails={cartItem}
+              />
+            );
+          })}
           <ResumeContainer>
             <div>
               <TextS color="base-text">Total de itens</TextS>
-              <TextS color="base-text">R$ 29,70</TextS>
+              <TextS color="base-text">{numberToBRL(totalValue, true)}</TextS>
             </div>
             <div>
               <TextS color="base-text">Entrega</TextS>
@@ -38,14 +58,10 @@ export function ConfirmOrderCard() {
                 Total
               </TextL>
               <TextL bold color="base-subtitle">
-                R$ 33,20
+                {numberToBRL(totalValue + 3.5, true)}
               </TextL>
             </OrderTotal>
-            <button
-              onClick={() => {
-                navigate("/summary");
-              }}
-            >
+            <button type="submit">
               <ButtonGText>Confirmar Pedido</ButtonGText>
             </button>
           </ResumeContainer>

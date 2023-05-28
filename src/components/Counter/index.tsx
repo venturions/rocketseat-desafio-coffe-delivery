@@ -15,11 +15,11 @@ export function Counter({
 }: CounterProps) {
   return (
     <CounterContainer>
-      <button onClick={handleSubCoffeeQuantity}>
+      <button type="button" onClick={handleSubCoffeeQuantity}>
         <Minus weight="bold" size={14} />
       </button>
       <TextM color="base-title">{coffeeQuantity}</TextM>
-      <button onClick={handleAddCoffeeQuantity}>
+      <button type="button" onClick={handleAddCoffeeQuantity}>
         <Plus weight="bold" size={14} />
       </button>
     </CounterContainer>

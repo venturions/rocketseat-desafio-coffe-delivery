@@ -7,70 +7,135 @@ import {
   CheckoutContainer,
   CustomInput,
 } from "./styles";
-import { useEffect, useState } from "react";
 import { ConfirmOrderCard } from "./components/ConfirmOrderCard";
 import { TitleXS } from "../../components/Typography";
 import { PaymentMethod } from "./components/PaymentMethod";
 import { OrderSectionTitle } from "./components/OrderSectionTitle/OrderSectionTitle";
 import { MapPinLine } from "phosphor-react";
+import * as zod from "zod";
+import { FormProvider, useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useNavigate } from "react-router-dom";
+import { OrderContext } from "../../contexts/OrderContext";
+import { useContext } from "react";
+
+const checkoutFormValidationSchema = zod.object({
+  cep: zod.string().min(1, "Informe o cep"),
+  rua: zod.string().min(1, "Informe a rua"),
+  numero: zod.string().min(1, "Informe o número da rua"),
+  complemento: zod.string().optional(),
+  bairro: zod.string().min(1, "Informe o bairro"),
+  cidade: zod.string().min(1, "Informe a cidade"),
+  uf: zod.string().min(1, "Informe o UF"),
+  paymentMethod: zod.enum([
+    "Cartão de Crédito",
+    "Cartão de Débito",
+    "Dinheiro",
+  ]),
+});
+
+type CheckoutFormData = zod.infer<typeof checkoutFormValidationSchema>;
 
 export function Checkout() {
-  const [selectedPaymentMethod, setSelectedPaymentMethod] = useState("");
+  const { finishOrder } = useContext(OrderContext);
+  const navigate = useNavigate();
 
-  const handleSelectPaymentMethod = (paymentMethod: string) => {
-    setSelectedPaymentMethod(paymentMethod);
+  const orderForm = useForm<CheckoutFormData>({
+    resolver: zodResolver(checkoutFormValidationSchema),
+    defaultValues: {
+      cep: "",
+      rua: "",
+      numero: "",
+      complemento: "",
+      bairro: "",
+      cidade: "",
+      uf: "",
+      paymentMethod: undefined,
+    },
+  });
+
+  const { handleSubmit, register, getValues } = orderForm;
+
+  const handleFinishOrder = () => {
+    const orderValues = getValues();
+    finishOrder(orderValues);
+    navigate("/summary");
   };
 
-  useEffect(() => {
-    console.log(selectedPaymentMethod);
-  }, [selectedPaymentMethod]);
-
   return (
-    <CheckoutContainer>
-      <AddressAndPaymentMethodContainer>
-        <TitleXS color="base-subtitle">Complete seu pedido</TitleXS>
-        <AddressContainer>
-          <OrderSectionTitle
-            icon={<MapPinLine alt="" size={22} />}
-            iconColor="yellow-dark"
-            title="Endereço de Entrega"
-            subtitle="Informe o endereço onde deseja receber seu pedido"
-          />
-          <AddressForm>
-            <Row>
-              <Col xs={12} lg={4}>
-                <CustomInput placeholder="CEP" />
-              </Col>
-            </Row>
-            <Row>
-              <Col xs={12}>
-                <CustomInput placeholder="Rua" />
-              </Col>
-            </Row>
-            <Row>
-              <Col xs={12} lg={4}>
-                <CustomInput placeholder="Número" />
-              </Col>
-              <Col xs={12} md={8}>
-                <CustomInput placeholder="Complemento" />
-              </Col>
-            </Row>
-            <Row>
-              <Col xs={12} md={4}>
-                <CustomInput placeholder="Bairro" />
-              </Col>
-              <Col xs={12} md={6}>
-                <CustomInput placeholder="Cidade" />
-              </Col>
-              <Col xs={12} md={2}>
-                <CustomInput placeholder="UF" />
-              </Col>
-            </Row>
-          </AddressForm>
-        </AddressContainer>
-        <PaymentMethod handleSelectPaymentMethod={handleSelectPaymentMethod} />
-      </AddressAndPaymentMethodContainer>
-      <ConfirmOrderCard />
-    </CheckoutContainer>
+    <form onSubmit={handleSubmit(handleFinishOrder)} action="">
+      <FormProvider {...orderForm}>
+        <CheckoutContainer>
+          <AddressAndPaymentMethodContainer>
+            <TitleXS color="base-subtitle">Complete seu pedido</TitleXS>
+            <AddressContainer>
+              <OrderSectionTitle
+                icon={<MapPinLine alt="" size={22} />}
+                iconColor="yellow-dark"
+                title="Endereço de Entrega"
+                subtitle="Informe o endereço onde deseja receber seu pedido"
+              />
+              <AddressForm>
+                <Row>
+                  <Col xs={12} lg={4}>
+                    <CustomInput
+                      id="cep"
+                      placeholder="CEP"
+                      {...register("cep")}
+                    />
+                  </Col>
+                </Row>
+                <Row>
+                  <Col xs={12}>
+                    <CustomInput
+                      id="rua"
+                      placeholder="Rua"
+                      {...register("rua")}
+                    />
+                  </Col>
+                </Row>
+                <Row>
+                  <Col xs={12} lg={4}>
+                    <CustomInput
+                      id="numero"
+                      placeholder="Número"
+                      {...register("numero")}
+                    />
+                  </Col>
+                  <Col xs={12} md={8}>
+                    <CustomInput
+                      id="complemento"
+                      placeholder="Complemento"
+                      {...register("complemento")}
+                    />
+                  </Col>
+                </Row>
+                <Row>
+                  <Col xs={12} md={4}>
+                    <CustomInput
+                      id="bairro"
+                      placeholder="Bairro"
+                      {...register("bairro")}
+                    />
+                  </Col>
+                  <Col xs={12} md={6}>
+                    <CustomInput
+                      id="cidade"
+                      placeholder="Cidade"
+                      {...register("cidade")}
+                    />
+                  </Col>
+                  <Col xs={12} md={2}>
+                    <CustomInput id="uf" placeholder="UF" {...register("uf")} />
+                  </Col>
+                </Row>
+              </AddressForm>
+            </AddressContainer>
+            <PaymentMethod />
+          </AddressAndPaymentMethodContainer>
+          <ConfirmOrderCard />
+        </CheckoutContainer>
+      </FormProvider>
+    </form>
   );
 }

@@ -7,14 +7,18 @@ import {
 import { Bank, CreditCard, CurrencyDollar, Money } from "phosphor-react";
 import { ButtonMText } from "../../../../components/Typography";
 import { OrderSectionTitle } from "../OrderSectionTitle/OrderSectionTitle";
+import { useFormContext } from "react-hook-form";
+import { useState } from "react";
 
-interface PaymentMethodProps {
-  handleSelectPaymentMethod: (paymentMethod: string) => void;
-}
+export function PaymentMethod() {
+  const { setValue } = useFormContext();
+  const [focusedButton, setFocusedButton] = useState("");
 
-export function PaymentMethod({
-  handleSelectPaymentMethod,
-}: PaymentMethodProps) {
+  const handleButtonClick = (paymentMethod: string) => {
+    setFocusedButton(paymentMethod);
+    setValue("paymentMethod", paymentMethod);
+  };
+
   return (
     <PaymentMethodContainer>
       <PaymentMethodContent>
@@ -29,7 +33,11 @@ export function PaymentMethod({
         <Row>
           <Col sm={12} md={4}>
             <CustomButton
-              onClick={() => handleSelectPaymentMethod("Cartão de crédito")}
+              type="button"
+              focused={focusedButton === "Cartão de Crédito"}
+              onClick={() => {
+                handleButtonClick("Cartão de Crédito");
+              }}
             >
               <CreditCard alt="Símbolo da sigra de um dólar" size={14} />
               <ButtonMText color="base-text">Cartão de crédito</ButtonMText>
@@ -38,14 +46,24 @@ export function PaymentMethod({
 
           <Col sm={12} md={4}>
             <CustomButton
-              onClick={() => handleSelectPaymentMethod("Cartão de débito")}
+              type="button"
+              focused={focusedButton === "Cartão de Débito"}
+              onClick={() => {
+                handleButtonClick("Cartão de Débito");
+              }}
             >
               <Bank alt="Símbolo da sigra de um dólar" size={14} />
               <ButtonMText color="base-text">Cartão de débito</ButtonMText>
             </CustomButton>
           </Col>
           <Col sm={12} md={4}>
-            <CustomButton onClick={() => handleSelectPaymentMethod("Dinheiro")}>
+            <CustomButton
+              type="button"
+              focused={focusedButton === "Dinheiro"}
+              onClick={() => {
+                handleButtonClick("Dinheiro");
+              }}
+            >
               <Money alt="Símbolo da sigra de um dólar" size={14} />
               <ButtonMText color="base-text">Dinheiro</ButtonMText>
             </CustomButton>

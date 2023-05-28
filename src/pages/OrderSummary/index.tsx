@@ -2,8 +2,12 @@ import { CurrencyDollar, MapPin, Timer } from "phosphor-react";
 import { OrderSummaryContainer, Summary } from "./styles";
 import { TextWithIcon } from "../../components/TextWithIcon";
 import { TextL, TextM, TitleL } from "../../components/Typography";
+import { OrderContext } from "../../contexts/OrderContext";
+import { useContext } from "react";
 
 export function OrderSummary() {
+  const { finishedOrder } = useContext(OrderContext);
+
   return (
     <OrderSummaryContainer>
       <TitleL color="yellow-dark">Uhu! Pedido confirmado</TitleL>
@@ -16,9 +20,13 @@ export function OrderSummary() {
             icon={<MapPin weight="fill" size={22} />}
             text={
               <TextM color="base-text">
-                Entrega em <b>Rua João Daniel Martinelli, 102</b>
+                Entrega em{" "}
+                <b>
+                  {finishedOrder.rua}, {finishedOrder.numero}
+                </b>
                 <br />
-                Farrapos - Porto Alegre, RS
+                {finishedOrder.bairro} - {finishedOrder.cidade},{" "}
+                {finishedOrder.uf}
               </TextM>
             }
             iconBackgroundColor="purple"
@@ -39,7 +47,7 @@ export function OrderSummary() {
               <TextM color="base-text">
                 Pagamento na entrega
                 <br />
-                <b> Cartão de Crédito</b>
+                <b> {finishedOrder.paymentMethod}</b>
               </TextM>
             }
             iconBackgroundColor="yellow-dark"

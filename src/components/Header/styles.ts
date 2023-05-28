@@ -1,4 +1,3 @@
-import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 interface CartButtonProps {
@@ -17,7 +16,7 @@ export const HeaderContainer = styled.header`
     gap: 12px;
   }
 
-  button {
+  > button {
     background: ${(props) => props.theme.background};
   }
 `;
@@ -41,7 +40,7 @@ export const LocationContainer = styled.div`
   }
 `;
 
-export const CartButton = styled(NavLink)<CartButtonProps>`
+export const CartButton = styled.button<CartButtonProps>`
   padding: 0.5rem;
   display: flex;
   justify-content: center;

@@ -68,7 +68,7 @@ export function Home() {
                   description={item.description}
                   tags={item.tags}
                   price={item.price}
-                ></CoffeeCard>
+                />
               );
             })}
           </CoffeeListGrid>
