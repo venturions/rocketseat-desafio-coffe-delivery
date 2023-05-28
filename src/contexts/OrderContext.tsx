@@ -1,6 +1,7 @@
-import { ReactNode, createContext, useState } from "react";
+import { ReactNode, createContext, useEffect, useState } from "react";
 import { FinishedOrderProps } from "../@types/FinishedOrder";
 import { CartItemsType } from "../@types/CartItems";
+import { useNavigate } from "react-router-dom";
 interface CyclesContextProviderProps {
   children: ReactNode;
 }
@@ -22,6 +23,36 @@ export function OrderContextProvider({ children }: CyclesContextProviderProps) {
   const [finishedOrder, setFinishedOrder] = useState<FinishedOrderProps>(
     {} as FinishedOrderProps
   );
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const fetchCartItemsFromLocalStorage = () => {
+      const localStorageValue = localStorage.getItem(
+        "@coffee-delivery:cartItems-state-1.0.0"
+      );
+
+      console.log("localStorageValue:", localStorageValue);
+
+      if (localStorageValue) {
+        const parsedValue = JSON.parse(localStorageValue);
+        setCartItems(parsedValue);
+      }
+    };
+
+    fetchCartItemsFromLocalStorage();
+  }, []);
+
+  useEffect(() => {
+    const saveCartItemsToLocalStorage = () => {
+      const stateJSON = JSON.stringify(cartItems);
+      localStorage.setItem("@coffee-delivery:cartItems-state-1.0.0", stateJSON);
+    };
+
+    if (cartItems.length > 0) {
+      saveCartItemsToLocalStorage();
+    }
+  }, [cartItems]);
 
   const setItemInCart = (item: CartItemsType) => {
     setCartItems((prevCartItems) => {
@@ -58,12 +89,12 @@ export function OrderContextProvider({ children }: CyclesContextProviderProps) {
 
   const removeCartItem = (cartItem: CartItemsType) => {
     setCartItems((prevCartItems) => {
-      if (prevCartItems.length > 1) {
-        return prevCartItems.filter(
-          (item) => item.coffeeName !== cartItem.coffeeName
-        );
+      if (prevCartItems.length === 1) {
+        navigate("/");
       }
-      return prevCartItems;
+      return prevCartItems.filter(
+        (item) => item.coffeeName !== cartItem.coffeeName
+      );
     });
   };
 
