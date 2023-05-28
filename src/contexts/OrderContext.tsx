@@ -88,6 +88,10 @@ export function OrderContextProvider({ children }: CyclesContextProviderProps) {
   const removeCartItem = (cartItem: CartItemsType) => {
     setCartItems((prevCartItems) => {
       if (prevCartItems.length === 1) {
+        localStorage.setItem(
+          "@coffee-delivery:cartItems-state-1.0.0",
+          JSON.stringify([])
+        );
         navigate("/");
       }
       return prevCartItems.filter(
