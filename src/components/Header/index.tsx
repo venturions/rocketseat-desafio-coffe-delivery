@@ -4,6 +4,7 @@ import { ShoppingCart, MapPin } from "phosphor-react";
 import { TextS } from "../Typography";
 import { OrderContext } from "../../contexts/OrderContext";
 import { useContext } from "react";
+import CoffeeDeliveryLogo from "../../assets/images/coffeDeliveryLogo.svg";
 
 export function Header() {
   const { cartItems } = useContext(OrderContext);
@@ -19,7 +20,7 @@ export function Header() {
         }}
       >
         <img
-          src="src/assets/images/coffeDeliveryLogo.svg"
+          src={CoffeeDeliveryLogo}
           alt="Um copo de café com um foguete desenhado e ao lado está escrito Coffe Delivery"
         ></img>
       </button>

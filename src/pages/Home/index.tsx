@@ -12,6 +12,7 @@ import {
 } from "./styles";
 import { CoffeeList } from "../../data/CoffeeList";
 import { CoffeeCardProps } from "../../@types/CoffeeCards";
+import backgroundImage from "../../assets/images/background.svg";
 
 export function Home() {
   return (
@@ -55,7 +56,7 @@ export function Home() {
             />
           </ContentInformation>
         </Content>
-        <img src="src/assets/images/background.svg"></img>
+        <img src={backgroundImage} />
       </IntroSection>
       <CoffeeListSection>
         <CoffeeListContainer>

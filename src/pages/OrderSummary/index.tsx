@@ -4,6 +4,7 @@ import { TextWithIcon } from "../../components/TextWithIcon";
 import { TextL, TextM, TitleL } from "../../components/Typography";
 import { OrderContext } from "../../contexts/OrderContext";
 import { useContext } from "react";
+import summaryImage from "../../assets/images/summaryImage.svg";
 
 export function OrderSummary() {
   const { finishedOrder } = useContext(OrderContext);
@@ -55,7 +56,7 @@ export function OrderSummary() {
         </Summary>
         <div>
           <img
-            src="src/assets/images/summaryImage.svg"
+            src={summaryImage}
             alt="Imagem de um entregador levando a sua encomenda"
           ></img>
         </div>

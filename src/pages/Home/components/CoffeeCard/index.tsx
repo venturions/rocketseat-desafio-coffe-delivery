@@ -19,7 +19,7 @@ import {
 } from "../../../../components/Typography";
 import { numberToBRL } from "../../../../utils/numberToBRL";
 import { convertToCamelCase } from "../../../../utils/toCamelCase";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { OrderContext } from "../../../../contexts/OrderContext";
 import { CoffeeCardProps } from "../../../../@types/CoffeeCards";
 
@@ -32,6 +32,7 @@ export function CoffeeCard({
   const { setItemInCart } = useContext(OrderContext);
 
   const [coffeeQuantity, setCoffeeQuantity] = useState(1);
+  const [loadedImage, setLoadedImage] = useState("");
 
   function handleAddCoffeeQuantity() {
     setCoffeeQuantity((state) => {
@@ -58,12 +59,21 @@ export function CoffeeCard({
     setCoffeeQuantity(1);
   }
 
+  useEffect(() => {
+    const loadImage = async () => {
+      const imagePath = `/src/assets/images/coffes/${convertToCamelCase(
+        name
+      )}.svg`;
+      const importedImage = await import(imagePath);
+      setLoadedImage(importedImage.default);
+    };
+
+    loadImage();
+  }, [name]);
+
   return (
     <CoffeeCardContainer>
-      <img
-        src={`src/assets/images/coffes/${convertToCamelCase(name)}.svg`}
-        alt="Foto de um café"
-      />
+      <img src={loadedImage} alt="Foto de um café" />
       <TagsContainer>
         {tags.map((item) => {
           return (
