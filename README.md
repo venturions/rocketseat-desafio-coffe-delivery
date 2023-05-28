@@ -1,10 +1,10 @@
 # Desafio 2 Rocketseat - Coffee Delivery
 
-Neste desafio, desenvolvemos uma aplicação de loja virtual de cafés, aplicando diversos fundamentos do React, juntamente com boas práticas de programação, estruturação e clean code.
+Neste desafio, desenvolvemos uma aplicação de loja virtual de cafés utilizando os fundamentos do React, juntamente com TypeScript. A aplicação foi estruturada com boas práticas de programação, clean code e utilização de bibliotecas para facilitar o desenvolvimento.
 
 ## Fundamentos Utilizados
 
-A implementação da aplicação envolveu a aplicação dos seguintes fundamentos:
+Ao desenvolver a aplicação, aplicamos os seguintes fundamentos do React com TypeScript:
 
 - Estados: Utilizamos os estados do React para controlar e atualizar as informações dinamicamente.
 - ContextAPI: Utilizamos o Context API do React para compartilhar informações entre componentes sem a necessidade de passar props manualmente.
@@ -16,7 +16,7 @@ A implementação da aplicação envolveu a aplicação dos seguintes fundamento
 
 ## Bibliotecas Utilizadas
 
-Para auxiliar no desenvolvimento da aplicação, utilizamos as seguintes bibliotecas:
+Para facilitar o desenvolvimento da aplicação, utilizamos as seguintes bibliotecas:
 
 - Styled Components: Biblioteca para estilização de componentes no React.
 - React Hook Form: Biblioteca para lidar com formulários de maneira simples e eficiente.
@@ -25,28 +25,20 @@ Para auxiliar no desenvolvimento da aplicação, utilizamos as seguintes bibliot
 - React Router: Biblioteca de roteamento para React.
 - Lodash: Biblioteca de utilitários JavaScript.
 
-## Como Instalar
+## Instalação e Execução
 
 Para instalar a aplicação, siga as etapas abaixo:
 
-1. Clone o projeto utilizando o seguinte comando no terminal:
-
-```bash
-git clone https://github.com/venturions/rocketseat-desafio-coffe-delivery.git
-```
+1. Clone o projeto utilizando o comando: `git clone https://github.com/venturions/rocketseat-desafio-coffe-delivery.git`
 
 2. Acesse o diretório raiz do projeto no terminal.
 
 3. Execute o comando `npm install` para instalar as dependências necessárias.
 
-## Como Executar
-
-Após a instalação, siga os passos abaixo para executar a aplicação:
+Para executar a aplicação:
 
 1. No terminal, dentro do diretório raiz do projeto, digite o comando `npm run dev`.
 
-2. Acesse o seguinte endereço em seu navegador: http://localhost:3000/.
-
-Isso permitirá que você visualize e interaja com a loja virtual de cafés.
+2. Acesse `http://localhost:3000/` em seu navegador.
 
 Certifique-se de ter o Node.js e o npm instalados em seu sistema antes de prosseguir com a instalação e execução da aplicação.
