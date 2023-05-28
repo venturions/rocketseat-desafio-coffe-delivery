@@ -6,13 +6,14 @@ Neste desafio, desenvolvi uma aplicação de loja virtual de cafés utilizando o
 
 Ao desenvolver a aplicação, apliquei os seguintes fundamentos do React com TypeScript:
 
-- Estados: Utilizei os estados do React para controlar e atualizar as informações dinamicamente.
-- ContextAPI: Utilizei o Context API do React para compartilhar informações entre componentes sem a necessidade de passar props manualmente.
-- LocalStorage: Utilizei o LocalStorage para armazenar informações no navegador do usuário, permitindo que o carrinho de compras seja persistente entre sessões.
-- Imutabilidade do Estado: Mantive a imutabilidade do estado ao atualizar os dados, garantindo um melhor desempenho e prevenindo problemas de mutação indesejada.
-- Listas e Chaves no ReactJS: Utilizei listas e chaves do React para renderizar de forma eficiente os itens do carrinho de compras e da lista de produtos.
-- Propriedades: Utilizei propriedades para passar informações entre componentes, permitindo a reutilização e modularidade.
-- Componentização: Dividi a aplicação em componentes reutilizáveis e de responsabilidades específicas, promovendo a organização e manutenção do código.
+Estados: Utilizei os estados do React para controlar e atualizar as informações dinamicamente.
+ContextAPI: Utilizei o Context API do React para compartilhar informações entre componentes sem a necessidade de passar props manualmente.
+LocalStorage: Utilizei o LocalStorage para armazenar informações no navegador do usuário, permitindo que o carrinho de compras seja persistente entre sessões.
+Imutabilidade do Estado: Mantive a imutabilidade do estado ao atualizar os dados, garantindo um melhor desempenho e prevenindo problemas de mutação indesejada.
+Listas e Chaves no ReactJS: Utilizei listas e chaves do React para renderizar de forma eficiente os itens do carrinho de compras e da lista de produtos.
+Propriedades: Utilizei propriedades para passar informações entre componentes, permitindo a reutilização e modularidade.
+Componentização: Dividi a aplicação em componentes reutilizáveis e de responsabilidades específicas, promovendo a organização e manutenção do código.
+Além disso, implementei responsividade na aplicação para que ela se adapte a diferentes tamanhos de tela, proporcionando uma experiência agradável em dispositivos móveis e desktops.
 
 ## Bibliotecas Utilizadas
 
