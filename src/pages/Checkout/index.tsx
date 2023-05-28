@@ -10,7 +10,6 @@ import {
   OptionalStartAdornement,
 } from "./styles";
 import { ConfirmOrderCard } from "./components/ConfirmOrderCard";
-import { ButtonMText, TitleXS } from "../../components/Typography";
 import { PaymentMethod } from "./components/PaymentMethod";
 import { OrderSectionTitle } from "./components/OrderSectionTitle/OrderSectionTitle";
 import { MapPinLine } from "phosphor-react";
@@ -20,6 +19,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useNavigate } from "react-router-dom";
 import { OrderContext } from "../../contexts/OrderContext";
 import { useContext } from "react";
+import { TitleXS } from "../../components/Typography";
 
 const checkoutFormValidationSchema = zod.object({
   cep: zod.string().min(1, "Informe o cep"),

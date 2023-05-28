@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { Container } from "react-grid-system";
-import { ButtonMText } from "../../components/Typography";
 
 export const CheckoutContainer = styled.div`
   margin-top: 72px;
