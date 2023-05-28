@@ -13,6 +13,7 @@ import { convertToCamelCase } from "../../../../utils/toCamelCase";
 import { OrderContext } from "../../../../contexts/OrderContext";
 import { useContext, useEffect, useState } from "react";
 import { CartItemsType } from "../../../../@types/CartItems";
+import { importCoffeeImage } from "../../../../utils/importCoffeeImage";
 
 interface CheckoutCoffeeCardProps {
   coffeeDetails: CartItemsType;
@@ -20,8 +21,7 @@ interface CheckoutCoffeeCardProps {
 
 export function CheckoutCoffeeCard({ coffeeDetails }: CheckoutCoffeeCardProps) {
   const { subCartItem, sumCartItem, removeCartItem } = useContext(OrderContext);
-  const [loadedImage, setLoadedImage] = useState("");
-
+  const [loadedImage, setLoadedImage] = useState<string | null>(null);
   function handleAddCoffeeQuantity() {
     sumCartItem(coffeeDetails);
   }
@@ -37,22 +37,22 @@ export function CheckoutCoffeeCard({ coffeeDetails }: CheckoutCoffeeCardProps) {
   }
 
   useEffect(() => {
-    const loadImage = async () => {
-      const imagePath = `/src/assets/images/coffes/${convertToCamelCase(
-        coffeeDetails.coffeeName
-      )}.svg`;
-      const importedImage = await import(imagePath);
-      setLoadedImage(importedImage.default);
-    };
-
-    loadImage();
+    const image = importCoffeeImage(
+      convertToCamelCase(coffeeDetails.coffeeName)
+    );
+    setLoadedImage(image ?? null);
   }, [coffeeDetails.coffeeName]);
 
   return (
     <>
       <CheckoutCoffeeCardContainer>
         <div>
-          <img src={loadedImage} alt="Foto de um café" width="64" height="64" />
+          <img
+            src={loadedImage ?? undefined}
+            alt="Foto de um café"
+            width="64"
+            height="64"
+          />
         </div>
         <CoffeeDetailsContainer>
           <TitleAndPriceContainer>
