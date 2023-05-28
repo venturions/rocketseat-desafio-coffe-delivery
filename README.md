@@ -1,6 +1,6 @@
 # Desafio 2 Rocketseat - Coffee Delivery
 
-Criação de uma loja virtual de cafés .
+## Criação de uma loja virtual de cafés.
 
 Nesse desafio eu desenvolvi uma aplicação para gerenciar um carrinho de compras de uma cafeteria fictícia utilizando os fundamentos do React, além de boas práticas de programação, estruturação e clean code.
 
