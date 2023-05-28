@@ -1,22 +1,22 @@
 # Desafio 2 Rocketseat - Coffee Delivery
 
-Neste desafio, desenvolvemos uma aplicação de loja virtual de cafés utilizando os fundamentos do React, juntamente com TypeScript. A aplicação foi estruturada com boas práticas de programação, clean code e utilização de bibliotecas para facilitar o desenvolvimento.
+Neste desafio, desenvolvi uma aplicação de loja virtual de cafés utilizando os fundamentos do React, juntamente com TypeScript. A aplicação foi estruturada com boas práticas de programação, clean code e utilização de bibliotecas para facilitar o desenvolvimento.
 
 ## Fundamentos Utilizados
 
-Ao desenvolver a aplicação, aplicamos os seguintes fundamentos do React com TypeScript:
+Ao desenvolver a aplicação, apliquei os seguintes fundamentos do React com TypeScript:
 
-- Estados: Utilizamos os estados do React para controlar e atualizar as informações dinamicamente.
-- ContextAPI: Utilizamos o Context API do React para compartilhar informações entre componentes sem a necessidade de passar props manualmente.
-- LocalStorage: Utilizamos o LocalStorage para armazenar informações no navegador do usuário, permitindo que o carrinho de compras seja persistente entre sessões.
-- Imutabilidade do Estado: Mantivemos a imutabilidade do estado ao atualizar os dados, garantindo um melhor desempenho e prevenindo problemas de mutação indesejada.
-- Listas e Chaves no ReactJS: Utilizamos listas e chaves do React para renderizar de forma eficiente os itens do carrinho de compras e da lista de produtos.
-- Propriedades: Utilizamos propriedades para passar informações entre componentes, permitindo a reutilização e modularidade.
-- Componentização: Dividimos a aplicação em componentes reutilizáveis e de responsabilidades específicas, promovendo a organização e manutenção do código.
+- Estados: Utilizei os estados do React para controlar e atualizar as informações dinamicamente.
+- ContextAPI: Utilizei o Context API do React para compartilhar informações entre componentes sem a necessidade de passar props manualmente.
+- LocalStorage: Utilizei o LocalStorage para armazenar informações no navegador do usuário, permitindo que o carrinho de compras seja persistente entre sessões.
+- Imutabilidade do Estado: Mantive a imutabilidade do estado ao atualizar os dados, garantindo um melhor desempenho e prevenindo problemas de mutação indesejada.
+- Listas e Chaves no ReactJS: Utilizei listas e chaves do React para renderizar de forma eficiente os itens do carrinho de compras e da lista de produtos.
+- Propriedades: Utilizei propriedades para passar informações entre componentes, permitindo a reutilização e modularidade.
+- Componentização: Dividi a aplicação em componentes reutilizáveis e de responsabilidades específicas, promovendo a organização e manutenção do código.
 
 ## Bibliotecas Utilizadas
 
-Para facilitar o desenvolvimento da aplicação, utilizamos as seguintes bibliotecas:
+Para facilitar o desenvolvimento da aplicação, utilizei as seguintes bibliotecas:
 
 - Styled Components: Biblioteca para estilização de componentes no React.
 - React Hook Form: Biblioteca para lidar com formulários de maneira simples e eficiente.
