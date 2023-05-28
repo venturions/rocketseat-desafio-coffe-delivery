@@ -10,7 +10,8 @@ import {
   ContentInformation,
   IntroSection,
 } from "./styles";
-import { CoffeeCardProps, CoffeeList } from "../../models/coffeeCard";
+import { CoffeeList } from "../../data/CoffeeList";
+import { CoffeeCardProps } from "../../@types/CoffeeCards";
 
 export function Home() {
   return (

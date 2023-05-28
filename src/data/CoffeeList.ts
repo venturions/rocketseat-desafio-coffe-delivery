@@ -1,9 +1,4 @@
-export interface CoffeeCardProps {
-  name: string;
-  description: string;
-  tags: string[];
-  price: number;
-}
+import { CoffeeCardProps } from "../@types/CoffeeCards";
 
 export const CoffeeList: CoffeeCardProps[] = [
   {

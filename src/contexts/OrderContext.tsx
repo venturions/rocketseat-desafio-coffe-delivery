@@ -1,6 +1,6 @@
 import { ReactNode, createContext, useState } from "react";
-import { CartItemsType } from "../models/cartItems";
 import { FinishedOrderProps } from "../@types/FinishedOrder";
+import { CartItemsType } from "../@types/CartItems";
 interface CyclesContextProviderProps {
   children: ReactNode;
 }

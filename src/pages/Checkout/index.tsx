@@ -6,9 +6,11 @@ import {
   AddressForm,
   CheckoutContainer,
   CustomInput,
+  InputWithOptionalOnEnd,
+  OptionalStartAdornement,
 } from "./styles";
 import { ConfirmOrderCard } from "./components/ConfirmOrderCard";
-import { TitleXS } from "../../components/Typography";
+import { ButtonMText, TitleXS } from "../../components/Typography";
 import { PaymentMethod } from "./components/PaymentMethod";
 import { OrderSectionTitle } from "./components/OrderSectionTitle/OrderSectionTitle";
 import { MapPinLine } from "phosphor-react";
@@ -102,12 +104,17 @@ export function Checkout() {
                       {...register("numero")}
                     />
                   </Col>
-                  <Col xs={12} md={8}>
-                    <CustomInput
-                      id="complemento"
-                      placeholder="Complemento"
-                      {...register("complemento")}
-                    />
+                  <Col xs={12} md={12}>
+                    <div style={{ position: "relative" }}>
+                      <InputWithOptionalOnEnd
+                        id="complemento"
+                        placeholder="Complemento"
+                        {...register("complemento")}
+                      />
+                      <OptionalStartAdornement color="base-label">
+                        Opcional
+                      </OptionalStartAdornement>
+                    </div>
                   </Col>
                 </Row>
                 <Row>

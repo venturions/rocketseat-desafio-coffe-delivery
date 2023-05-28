@@ -17,11 +17,11 @@ import {
   TitleM,
   TitleS,
 } from "../../../../components/Typography";
-import { CoffeeCardProps } from "../../../../models/coffeeCard";
 import { numberToBRL } from "../../../../utils/numberToBRL";
 import { convertToCamelCase } from "../../../../utils/toCamelCase";
 import { useContext, useState } from "react";
 import { OrderContext } from "../../../../contexts/OrderContext";
+import { CoffeeCardProps } from "../../../../@types/CoffeeCards";
 
 export function CoffeeCard({
   name,

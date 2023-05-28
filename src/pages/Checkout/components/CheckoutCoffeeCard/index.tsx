@@ -8,11 +8,11 @@ import {
   RemoveButton,
   TitleAndPriceContainer,
 } from "./styles";
-import { CartItemsType } from "../../../../models/cartItems";
 import { numberToBRL } from "../../../../utils/numberToBRL";
 import { convertToCamelCase } from "../../../../utils/toCamelCase";
 import { OrderContext } from "../../../../contexts/OrderContext";
 import { useContext } from "react";
+import { CartItemsType } from "../../../../@types/CartItems";
 
 interface CheckoutCoffeeCardProps {
   coffeeDetails: CartItemsType;

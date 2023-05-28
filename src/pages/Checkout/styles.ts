@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Container } from "react-grid-system";
+import { ButtonMText } from "../../components/Typography";
 
 export const CheckoutContainer = styled.div`
   margin-top: 72px;
@@ -64,5 +65,31 @@ export const CustomInput = styled.input`
 
   :focus {
     box-shadow: 0 0 0 2px ${(props) => props.theme.yellow};
+  }
+`;
+
+export const InputWithOptionalOnEnd = styled(CustomInput)`
+  position: relative;
+  padding-left: 80px;
+
+  @media screen and (max-width: 390px) {
+    padding-left: 12px;
+  }
+`;
+
+export const OptionalStartAdornement = styled.span`
+  position: absolute;
+  top: 22px;
+  left: 12px;
+  transform: translateY(-50%);
+
+  font-family: "Roboto";
+  font-style: italic;
+  font-size: 0.75rem;
+
+  color: ${(props) => props.theme["base-label"]};
+
+  @media screen and (max-width: 390px) {
+    display: none;
   }
 `;
